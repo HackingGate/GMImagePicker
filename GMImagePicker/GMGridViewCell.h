@@ -22,6 +22,7 @@
 @property (nonatomic, strong) CAGradientLayer *gradient;
 //Selection overlay
 @property (nonatomic) BOOL shouldShowSelection;
+@property (nonatomic, strong) UIView *overlay;
 @property (nonatomic, strong) UIView *coverView;
 @property (nonatomic, strong) UIButton *selectedButton;
 

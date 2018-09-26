@@ -37,6 +37,13 @@
     GMImagePickerController *picker = [[GMImagePickerController alloc] init];
     picker.delegate = self;
     picker.title = @"Custom title";
+
+    /* Twitter like example
+    picker.imagePickLimit = 4;
+    picker.videoPickLimit = 1;
+    picker.mediaTypes = @[@(PHAssetMediaTypeImage), @(PHAssetMediaTypeVideo)];
+    picker.allowsPickDifferentTypes = NO;
+     */
     
     picker.customDoneButtonTitle = @"Finished";
     picker.customCancelButtonTitle = @"Nope";

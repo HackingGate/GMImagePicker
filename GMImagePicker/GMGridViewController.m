@@ -356,6 +356,59 @@ NSString * const GMGridViewCellIdentifier = @"GMGridViewCellIdentifier";
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([cell isKindOfClass:GMGridViewCell.class]) {
+        [self updateCell:(GMGridViewCell *)cell];
+    }
+}
+
+- (void)updateVisibleCells {
+    for (GMGridViewCell *cell in self.collectionView.visibleCells) {
+        [self updateCell:cell];
+    }
+}
+
+- (void)updateCell:(GMGridViewCell *)cell {
+    NSUInteger imageCount = 0, videoCount = 0, audioCount = 0;
+    for (PHAsset *asset in self.picker.selectedAssets) {
+        if (asset.mediaType == PHAssetMediaTypeImage ) {
+            imageCount++;
+        } else if (asset.mediaType == PHAssetMediaTypeVideo ) {
+            videoCount++;
+        } else if (asset.mediaType == PHAssetMediaTypeAudio ) {
+            audioCount++;
+        }
+    }
+    
+    BOOL enableAndShow = NO;
+    
+    if (cell.asset.mediaType == PHAssetMediaTypeImage) {
+        enableAndShow = imageCount < self.picker.imagePickLimit;
+    }
+    if (cell.asset.mediaType == PHAssetMediaTypeVideo) {
+        enableAndShow = videoCount < self.picker.videoPickLimit;
+    }
+    if (cell.asset.mediaType == PHAssetMediaTypeAudio) {
+        enableAndShow = audioCount < self.picker.audioPickLimit;
+    }
+    if (self.picker.allowsPickDifferentTypes == NO) {
+        if (imageCount > 0) {
+            enableAndShow = enableAndShow && cell.asset.mediaType == PHAssetMediaTypeImage;
+        }
+        if (videoCount > 0) {
+            enableAndShow = enableAndShow && cell.asset.mediaType == PHAssetMediaTypeVideo;
+        }
+        if (audioCount > 0) {
+            enableAndShow = enableAndShow && cell.asset.mediaType == PHAssetMediaTypeAudio;
+        }
+    }
+    
+    enableAndShow = enableAndShow && self.picker.selectedAssets.count < self.picker.totalPickLimit;
+    
+    cell.overlay.hidden = enableAndShow;
+    cell.enabled = enableAndShow;
+    
+}
 
 #pragma mark - Collection View Delegate
 
@@ -383,6 +436,8 @@ NSString * const GMGridViewCellIdentifier = @"GMGridViewCellIdentifier";
     if ([self.picker.delegate respondsToSelector:@selector(assetsPickerController:didSelectAsset:)]) {
         [self.picker.delegate assetsPickerController:self.picker didSelectAsset:asset];
     }
+    
+    [self updateVisibleCells];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath

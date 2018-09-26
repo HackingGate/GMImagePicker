@@ -30,6 +30,13 @@
         _confirmSingleSelection = NO;
         _showCameraButton = NO;
         
+        // Pick limit:
+        _totalPickLimit = 99;
+        _imagePickLimit = 99;
+        _videoPickLimit = 99;
+        _audioPickLimit = 99;
+        _allowsPickDifferentTypes = YES;
+        
         // Grid configuration:
         _colsInPortrait = 3;
         _colsInLandscape = 5;

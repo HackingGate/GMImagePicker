@@ -36,6 +36,31 @@ static CGSize const kPopoverContentSize = {480, 720};
  */
 @property (nonatomic, strong) NSMutableArray *selectedAssets;
 
+/**
+ *  Number of total pick limit (99 by default)
+ */
+@property (nonatomic) NSUInteger totalPickLimit;
+
+/**
+ *  Number of image pick limit (99 by default)
+ */
+@property (nonatomic) NSUInteger imagePickLimit;
+
+/**
+ *  Number of video pick limit (99 by default)
+ */
+@property (nonatomic) NSUInteger videoPickLimit;
+
+/**
+ *  Number of audio pick limit (99 by default)
+ */
+@property (nonatomic) NSUInteger audioPickLimit;
+
+/**
+ *  If set, you are allowed to pick image, video and audio in the same picker. (default YES)
+ *  Twitter like example: allowsPickDifferentTypes = NO; mediaTypes = @[@(PHAssetMediaTypeImage), @(PHAssetMediaTypeVideo)]; imagePickLimit = 4; videoPickLimit = 1;
+ */
+@property (nonatomic) BOOL allowsPickDifferentTypes;
 
 /** UI Customizations **/
 

@@ -102,6 +102,14 @@ static UIColor *disabledColor;
         [self addSubview:_videoDuration];
         _videoDuration.hidden = YES;
         
+        // black overlay
+        _overlay = [[UIView alloc] initWithFrame:self.bounds];
+        _overlay.translatesAutoresizingMaskIntoConstraints = NO;
+        _overlay.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        _overlay.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        [self addSubview:_overlay];
+        _overlay.hidden = YES;
+        
         // Selection overlay & icon
         _coverView = [[UIView alloc] initWithFrame:self.bounds];
         _coverView.translatesAutoresizingMaskIntoConstraints = NO;

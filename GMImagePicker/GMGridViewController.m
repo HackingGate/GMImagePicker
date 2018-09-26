@@ -299,10 +299,6 @@ NSString * const GMGridViewCellIdentifier = @"GMGridViewCellIdentifier";
     GMGridViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:GMGridViewCellIdentifier
                                                              forIndexPath:indexPath];
     
-    // Increment the cell's tag
-    NSInteger currentTag = cell.tag + 1;
-    cell.tag = currentTag;
-    
     PHAsset *asset = self.assetsFetchResults[indexPath.item];
     
     /*if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -329,10 +325,8 @@ NSString * const GMGridViewCellIdentifier = @"GMGridViewCellIdentifier";
                                         options:nil
                                   resultHandler:^(UIImage *result, NSDictionary *info) {
                                       
-                                      // Only update the thumbnail if the cell tag hasn't changed. Otherwise, the cell has been re-used.
-                                      if (cell.tag == currentTag) {
-                                          [cell.imageView setImage:result];
-                                      }
+                                      [cell.imageView setImage:result];
+                                      
                                   }];
     }
     
@@ -411,6 +405,8 @@ NSString * const GMGridViewCellIdentifier = @"GMGridViewCellIdentifier";
     if ([self.picker.delegate respondsToSelector:@selector(assetsPickerController:didDeselectAsset:)]) {
         [self.picker.delegate assetsPickerController:self.picker didDeselectAsset:asset];
     }
+    
+    [self updateVisibleCells];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath

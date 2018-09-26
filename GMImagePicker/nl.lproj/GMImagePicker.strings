@@ -1,0 +1,44 @@
+/* Cancel */
+"picker.navigation.cancel-button" = "Annuleren";
+
+/* Done */
+"picker.navigation.done-button" = "Gereed";
+
+/* Navigation bar default title */
+"picker.navigation.title" = "GMImagePicker";
+
+/* %@ Items Selected */
+"picker.selection.multiple-items" = "%@ Items geselecteerd";
+
+/* %@ Photos Selected */
+"picker.selection.multiple-photos" = "%@ Foto's geselecteerd";
+
+/* %@ Videos Selected */
+"picker.selection.multiple-videos" = "%@ Video's geselecteerd";
+
+/* 1 Photo Selected */
+"picker.selection.single-photo" = "1 Foto geselecteerd";
+
+/* 1 Video Selected */
+"picker.selection.single-video" = "1 Video geselecteerd";
+
+/* All photos */
+"picker.table.all-photos-label" = "Filmrol";
+
+/* Smart Albums */
+"picker.table.smart-albums-header" = "SLIMME VERZAMELINGEN";
+
+/* Albums */
+"picker.table.user-albums-header" = "VERZAMELINGEN";
+
+/* Confirmation of single selection alert title */
+"picker.confirm.title" = "Weet je het zeker?";
+
+/* Confirmation of single selection alert message */
+"picker.confirm.message" = "Wil je de foto selecteren die je hebt aangetikt?";
+
+/* Action (button) deny/no/refuse */
+"picker.action.no" = "Nee";
+
+/* Action (button) agree/yes/approve */
+"picker.action.yes" = "Ja";

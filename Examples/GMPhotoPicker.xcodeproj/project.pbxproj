@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E1D26051B94415000BD4B31 /* GMImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D26031B94415000BD4B31 /* GMImagePicker.strings */; };
+		B0493B8F1CA51FE50054FD57 /* GMImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0493B8D1CA51FE50054FD57 /* GMImagePicker.strings */; };
 		B31E08651A0C45BC000D7841 /* GMImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = B31E084C1A0C45BC000D7841 /* GMImagePicker.strings */; };
 		B31E08661A0C45BC000D7841 /* GMImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = B31E084F1A0C45BC000D7841 /* GMImagePicker.strings */; };
 		B31E08671A0C45BC000D7841 /* GMImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = B31E08521A0C45BC000D7841 /* GMImagePicker.strings */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		8E1D26041B94415000BD4B31 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = GMImagePicker.strings; sourceTree = "<group>"; };
+		B0493B8E1CA51FE50054FD57 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = GMImagePicker.strings; sourceTree = "<group>"; };
 		B31E084D1A0C45BC000D7841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = GMImagePicker.strings; sourceTree = "<group>"; };
 		B31E08501A0C45BC000D7841 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = GMImagePicker.strings; sourceTree = "<group>"; };
 		B31E08531A0C45BC000D7841 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = GMImagePicker.strings; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 				8E1D26031B94415000BD4B31 /* GMImagePicker.strings */,
 			);
 			path = ru.lproj;
+			sourceTree = "<group>";
+		};
+		B0493B8C1CA51FE50054FD57 /* nl.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				B0493B8D1CA51FE50054FD57 /* GMImagePicker.strings */,
+			);
+			path = nl.lproj;
 			sourceTree = "<group>";
 		};
 		B31E084B1A0C45BC000D7841 /* Base.lproj */ = {
@@ -244,6 +254,7 @@
 		B3A2F8A319D18A3700A59BE4 /* GMImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				B0493B8C1CA51FE50054FD57 /* nl.lproj */,
 				B31E084B1A0C45BC000D7841 /* Base.lproj */,
 				B31E084E1A0C45BC000D7841 /* ca.lproj */,
 				B31E08511A0C45BC000D7841 /* de.lproj */,
@@ -345,6 +356,7 @@
 				it,
 				pt,
 				ru,
+				nl,
 			);
 			mainGroup = B37D576B19CA3B39007F64BD;
 			productRefGroup = B37D577519CA3B3A007F64BD /* Products */;
@@ -375,6 +387,7 @@
 				B31E08661A0C45BC000D7841 /* GMImagePicker.strings in Resources */,
 				B31E08691A0C45BC000D7841 /* GMImagePicker.strings in Resources */,
 				8E1D26051B94415000BD4B31 /* GMImagePicker.strings in Resources */,
+				B0493B8F1CA51FE50054FD57 /* GMImagePicker.strings in Resources */,
 				B37D578519CA3B3A007F64BD /* Images.xcassets in Resources */,
 				B31E08651A0C45BC000D7841 /* GMImagePicker.strings in Resources */,
 				B31E08671A0C45BC000D7841 /* GMImagePicker.strings in Resources */,
@@ -431,6 +444,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				8E1D26041B94415000BD4B31 /* ru */,
+			);
+			name = GMImagePicker.strings;
+			sourceTree = "<group>";
+		};
+		B0493B8D1CA51FE50054FD57 /* GMImagePicker.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0493B8E1CA51FE50054FD57 /* nl */,
 			);
 			name = GMImagePicker.strings;
 			sourceTree = "<group>";
